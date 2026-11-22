@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | Epic Flavor</title>
+  <meta name="description" content="Chef-made catering, private dinners and prepared meals in Hampton Roads by Chef William Slade.">
+  <link rel="icon" href="/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/images/logo.png" alt="" width="46" height="52"><span>Epic Flavor</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/menus.html">Menus</a>
+        <a href="/services.html" aria-current="page">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/gallery.html">Gallery</a>
+        <a class="nav-order" href="/order.html">Order or inquire</a>
+      </nav>
+    </div>
+  </header>
+  <div class="season" hidden></div>
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Services</h1>
+        <p class="lead prose">Every menu is custom. These are the ways most clients work with Chef Slade, and he's happy to put together something different.</p>
+      </div>
+    </section>
+    <section class="section section-tight">
+      <div class="wrap" id="svc">
+        <button type="button" class="btn btn-dark" id="svc-prices" aria-pressed="false">View pricing</button>
+        <div class="offerings">
+          <div class="offering"><h3>Small events</h3><p>Plated dinners for 2 to 10 guests. Birthdays, anniversaries, a dinner party at home.</p><span class="price" hidden>$400 to $600</span></div>
+          <div class="offering"><h3>Large events</h3><p>Plated service for 10 or more guests, with staff to keep every course on time.</p><span class="price" hidden>$30 to $50 per person</span></div>
+          <div class="offering"><h3>Cocktail parties</h3><p>Passed appetizers for any number of guests.</p><span class="price" hidden>$20 to $45 per person</span></div>
+          <div class="offering"><h3>Prepared meals</h3><p>Meals for the week, delivered with simple reheating instructions.</p><span class="price" hidden>$15 to $25 per meal, $50 delivery minimum</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-paper cta">
+      <div class="wrap">
+        <h2>Tell him what you're planning.</h2>
+        <p>Include your date and headcount and you'll hear back with sample menus and a quote.</p>
+        <a class="btn btn-dark" href="/order.html">Order or inquire</a>
+      </div>
+    </section>
+    <script>
+      document.getElementById('svc-prices').addEventListener('click', function () {
+        var on = this.getAttribute('aria-pressed') !== 'true';
+        this.setAttribute('aria-pressed', String(on));
+        this.textContent = on ? 'Hide pricing' : 'View pricing';
+        document.querySelectorAll('#svc .price').forEach(function (p) { p.hidden = !on; });
+      });
+    </script>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="f-brand">Epic Flavor</div>
+        <div>Catering by Chef William Slade, serving Hampton Roads</div>
+      </div>
+      <div>
+        <div><a href="tel:7577638112">757-763-8112</a></div>
+        <div><a href="mailto:epicflavor24@gmail.com">epicflavor24@gmail.com</a></div>
+      </div>
+      <div class="small">&copy; <span id="yr">2026</span> Epic Flavor. All content property of Chef William Slade.</div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+</body>
+</html>

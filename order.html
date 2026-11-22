@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order or inquire | Epic Flavor</title>
+  <meta name="description" content="Chef-made catering, private dinners and prepared meals in Hampton Roads by Chef William Slade.">
+  <link rel="icon" href="/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/images/logo.png" alt="" width="46" height="52"><span>Epic Flavor</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/menus.html">Menus</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/gallery.html">Gallery</a>
+        <a class="nav-order" href="/order.html" aria-current="page">Order or inquire</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Order or inquire</h1>
+        <p class="lead prose">Planning an event, placing a holiday order, or setting up prepared meals? Send the details and Chef Slade will get back to you, usually within a day.</p>
+      </div>
+    </section>
+    <section class="section section-tight">
+      <div class="wrap">
+        <form class="form" name="inquiry" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company">
+          <input type="hidden" name="form-name" value="inquiry">
+          <p class="hidden-field"><label>Leave this empty <input name="company"></label></p>
+          <div><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="f-type">What do you need?</label>
+            <select id="f-type" name="type" required>
+              <option value="">Choose one</option>
+              <option>Holiday order</option>
+              <option>Small event (2 to 10 guests)</option>
+              <option>Large event (10+ guests)</option>
+              <option>Cocktail party</option>
+              <option>Prepared meals</option>
+              <option>Something else</option>
+            </select></div>
+          <div><label for="f-date">Date <span class="hint">(if you know it)</span></label><input id="f-date" name="date" type="date"></div>
+          <div><label for="f-guests">Number of guests</label><input id="f-guests" name="guests" inputmode="numeric"></div>
+          <div><label for="f-diet">Dietary needs <span class="hint">(optional)</span></label><input id="f-diet" name="dietary"></div>
+          <div class="full"><label for="f-details">Details</label><textarea id="f-details" name="details" placeholder="For holiday orders, list the dishes and quantities you'd like." required></textarea></div>
+          <div class="full"><button class="btn btn-dark" type="submit">Send request</button></div>
+        </form>
+        <p class="contact-direct">Prefer to talk? Call <a href="tel:7577638112">757-763-8112</a> or email <a href="mailto:epicflavor24@gmail.com">epicflavor24@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="f-brand">Epic Flavor</div>
+        <div>Catering by Chef William Slade, serving Hampton Roads</div>
+      </div>
+      <div>
+        <div><a href="tel:7577638112">757-763-8112</a></div>
+        <div><a href="mailto:epicflavor24@gmail.com">epicflavor24@gmail.com</a></div>
+      </div>
+      <div class="small">&copy; <span id="yr">2026</span> Epic Flavor. All content property of Chef William Slade.</div>
+    </div>
+  </footer>
+  <script src="/site.js" defer></script>
+</body>
+</html>
