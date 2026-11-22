@@ -10,43 +10,115 @@
           "title": "Appetizers and salads",
           "note": "Each dish serves four.",
           "items": [
-            { "name": "Cajun seared ahi tuna", "description": "Sweet Thai chili sauce, wasabi cream and orange ginger ponzu", "price": "$42.95" },
-            { "name": "Baked brie trilogy", "description": "Caramelized apple in puff pastry; fresh herb and garlic; blackberry and spiced pecan wrapped in phyllo. Served with toasted baguette", "price": "$39.95" },
-            { "name": "Roast chilled tenderloin", "description": "Horseradish cream, garlic and red onion jam, blue cheese crumbles and rainbow pepper confit, with toasted baguette", "price": "$59.95" },
-            { "name": "Grilled vegetable display", "description": "Balsamic glaze, basil pesto and whipped feta with honey and thyme", "price": "$29.95" },
-            { "name": "Deck the greens", "description": "Mixed greens with Honeycrisp apples, spiced pecans, goat cheese, tart cherries, black pepper and maple vinaigrette", "price": "$26.95" },
-            { "name": "Winter wedge salad", "description": "Iceberg wedge with roasted root vegetables, cherrywood bacon, pomegranate arils, caramelized red onion, blue cheese and spiced ranch", "price": "$26.95" }
+            {
+              "name": "Cajun seared ahi tuna",
+              "description": "Sweet Thai chili sauce, wasabi cream and orange ginger ponzu",
+              "price": "$42.95"
+            },
+            {
+              "name": "Baked brie trilogy",
+              "description": "Caramelized apple in puff pastry; fresh herb and garlic; blackberry and spiced pecan wrapped in phyllo. Served with toasted baguette",
+              "price": "$39.95"
+            },
+            {
+              "name": "Roast chilled tenderloin",
+              "description": "Horseradish cream, garlic and red onion jam, blue cheese crumbles and rainbow pepper confit, with toasted baguette",
+              "price": "$59.95"
+            },
+            {
+              "name": "Grilled vegetable display",
+              "description": "Balsamic glaze, basil pesto and whipped feta with honey and thyme",
+              "price": "$29.95"
+            },
+            {
+              "name": "Deck the greens",
+              "description": "Mixed greens with Honeycrisp apples, spiced pecans, goat cheese, tart cherries, black pepper and maple vinaigrette",
+              "price": "$26.95"
+            },
+            {
+              "name": "Winter wedge salad",
+              "description": "Iceberg wedge with roasted root vegetables, cherrywood bacon, pomegranate arils, caramelized red onion, blue cheese and spiced ranch",
+              "price": "$26.95"
+            }
           ]
         },
         {
           "title": "Mains",
           "note": "Each main comes with your choice of two sides.",
           "items": [
-            { "name": "Beef tenderloin", "description": "Bourbon and brown sugar glaze", "price": "$42.95" },
-            { "name": "Apple and raisin stuffed pork loin", "description": "Tart cherry glaze", "price": "$28.95" },
-            { "name": "Roasted herb turkey breast", "description": "Orange cranberry compote", "price": "$24.95" },
-            { "name": "Pan-seared rockfish", "description": "Celeriac and parsnip purée, sage brown butter", "price": "$38.95" },
-            { "name": "Atlantic bronzed salmon", "description": "Lemon and herb compound butter", "price": "$28.95" },
-            { "name": "Two lump crab cakes", "description": "Roasted red pepper aioli", "price": "$45.92" }
+            {
+              "name": "Beef tenderloin",
+              "description": "Bourbon and brown sugar glaze",
+              "price": "$42.95"
+            },
+            {
+              "name": "Apple and raisin stuffed pork loin",
+              "description": "Tart cherry glaze",
+              "price": "$28.95"
+            },
+            {
+              "name": "Roasted herb turkey breast",
+              "description": "Orange cranberry compote",
+              "price": "$24.95"
+            },
+            {
+              "name": "Pan-seared rockfish",
+              "description": "Celeriac and parsnip purée, sage brown butter",
+              "price": "$38.95"
+            },
+            {
+              "name": "Atlantic bronzed salmon",
+              "description": "Lemon and herb compound butter",
+              "price": "$28.95"
+            },
+            {
+              "name": "Two lump crab cakes",
+              "description": "Roasted red pepper aioli",
+              "price": "$45.92"
+            }
           ]
         },
         {
           "title": "Sides",
           "items": [
-            { "name": "Charred asparagus with lemon zest" },
-            { "name": "Green beans amandine" },
-            { "name": "Sweet potato dauphinoise" },
-            { "name": "Herb roasted fingerling potatoes" },
-            { "name": "Cornbread stuffing with tart cherries and chestnuts" }
-          ]
+            {
+              "name": "Charred asparagus with lemon zest"
+            },
+            {
+              "name": "Green beans amandine"
+            },
+            {
+              "name": "Sweet potato dauphinoise"
+            },
+            {
+              "name": "Herb roasted fingerling potatoes"
+            },
+            {
+              "name": "Cornbread stuffing with tart cherries and chestnuts"
+            }
+          ],
+          "style": "compact"
         },
         {
           "title": "Desserts",
           "items": [
-            { "name": "Cheesecake", "description": "Key lime with Oreo crust; lemon blueberry with pistachio crust; espresso with espresso mousse and ladyfinger crust. Individual, 6 inch (serves 6 to 8) or 10 inch (serves 12 to 16)", "price": "$12 / $30 / $60" },
-            { "name": "Mini dessert shooters", "description": "Tiramisu; white, dark and milk chocolate mousse; triple layer panna cotta (white chocolate, mango and raspberry); chocolate peanut butter mousse", "price": "$2 each" },
-            { "name": "Dessert bars", "description": "Pecan pie, peppermint brownie, lemon white chocolate with cranberries, eggnog cheesecake. Serves four", "price": "$12" }
-          ]
+            {
+              "name": "Cheesecake",
+              "description": "Key lime with Oreo crust; lemon blueberry with pistachio crust; espresso with espresso mousse and ladyfinger crust. Individual, 6 inch (serves 6 to 8) or 10 inch (serves 12 to 16)",
+              "price": "$12 / $30 / $60"
+            },
+            {
+              "name": "Mini dessert shooters",
+              "description": "Tiramisu; white, dark and milk chocolate mousse; triple layer panna cotta (white chocolate, mango and raspberry); chocolate peanut butter mousse",
+              "price": "$2 each"
+            },
+            {
+              "name": "Dessert bars",
+              "description": "Pecan pie, peppermint brownie, lemon white chocolate with cranberries, eggnog cheesecake. Serves four",
+              "price": "$12"
+            }
+          ],
+          "style": "band"
         }
       ]
     },

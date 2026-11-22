@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | Epic Flavor</title>
   <meta name="description" content="Chef-made catering, private dinners and prepared meals in Hampton Roads by Chef William Slade.">
-  <link rel="icon" href="/images/logo.png">
+  <link rel="icon" href="/images/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="/"><img src="/images/logo.png" alt="" width="46" height="46"><span>Epic Flavor</span></a>
+      <a class="brand" href="/"><img src="/images/logo-mark.png" alt="" width="64" height="43"><span>Epic Flavor</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Main">
         <a href="/index.html">Home</a>
@@ -32,17 +32,47 @@
       <div class="wrap">
         <h1>Services</h1>
         <p class="lead prose">Every menu is custom. These are the ways most clients work with Chef Slade, and he's happy to put together something different.</p>
+        <button type="button" class="btn btn-dark" id="svc-prices" aria-pressed="false">View pricing</button>
       </div>
     </section>
-    <section class="section section-tight">
-      <div class="wrap" id="svc">
-        <button type="button" class="btn btn-dark" id="svc-prices" aria-pressed="false">View pricing</button>
-        <div class="offerings">
-          <div class="offering"><h3>Small events</h3><p>Plated dinners for 2 to 10 guests. Birthdays, anniversaries, a dinner party at home.</p><span class="price" hidden>$400 to $600</span></div>
-          <div class="offering"><h3>Large events</h3><p>Plated service for 10 or more guests, with staff to keep every course on time.</p><span class="price" hidden>$30 to $50 per person</span></div>
-          <div class="offering"><h3>Cocktail parties</h3><p>Passed appetizers for any number of guests.</p><span class="price" hidden>$20 to $45 per person</span></div>
-          <div class="offering"><h3>Prepared meals</h3><p>Meals for the week, delivered with simple reheating instructions.</p><span class="price" hidden>$15 to $25 per meal, $50 delivery minimum</span></div>
-        </div>
+    <section class="section section-tight" id="svc">
+      <div class="wrap services">
+        <article class="service">
+          <img src="/images/beef-wellington.jpg" alt="Plated beef Wellington" loading="lazy">
+          <div class="service-text">
+            <h2>Small events</h2>
+            <p class="service-meta">2 to 10 guests, plated</p>
+            <p>Birthdays, anniversaries, a dinner party at home. Chef Slade plans the menu with you, cooks in your kitchen and serves each course.</p>
+            <p class="price" hidden>$400 to $600</p>
+          </div>
+        </article>
+        <article class="service">
+          <img src="/images/mozzarella-roulade.jpg" alt="Rows of plated mozzarella roulade" loading="lazy">
+          <div class="service-text">
+            <h2>Large events</h2>
+            <p class="service-meta">10 guests and up, plated</p>
+            <p>Corporate dinners, rehearsal dinners and family celebrations, with staff to keep every course on time.</p>
+            <p class="price" hidden>$30 to $50 per person</p>
+          </div>
+        </article>
+        <article class="service">
+          <img src="/images/tuna-tostadas.jpg" alt="Tuna tostada with pineapple salsa" loading="lazy">
+          <div class="service-text">
+            <h2>Cocktail parties</h2>
+            <p class="service-meta">Any number of guests, passed appetizers</p>
+            <p>Small bites that travel well on a tray and still taste like they came straight off the stove.</p>
+            <p class="price" hidden>$20 to $45 per person</p>
+          </div>
+        </article>
+        <article class="service">
+          <img src="/images/pot-roast.jpg" alt="Pot roast with carrots and potatoes" loading="lazy">
+          <div class="service-text">
+            <h2>Prepared meals</h2>
+            <p class="service-meta">Delivered, easy to reheat</p>
+            <p>A week of home-style meals in your fridge, with simple reheating instructions on each one.</p>
+            <p class="price" hidden>$15 to $25 per meal, $50 delivery minimum</p>
+          </div>
+        </article>
       </div>
     </section>
     <section class="section section-paper cta">
@@ -64,7 +94,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <div>
-        <div class="f-brand">Epic Flavor</div>
+        <div class="f-brand"><img src="/images/logo-mark-light.png" alt="" width="64" height="41"><span>Epic Flavor</span></div>
         <div>Catering by Chef William Slade, serving Hampton Roads</div>
       </div>
       <div>

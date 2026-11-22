@@ -73,18 +73,23 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
     body.innerHTML =
       (current.intro ? `<p class="menu-intro">${esc(current.intro)}</p>` : '') +
       (hasPrices ? '<button type="button" class="btn btn-dark price-toggle" aria-pressed="false">View pricing</button>' : '') +
-      current.sections.map((s) => `
-        <section class="menu-section">
-          <h2>${esc(s.title)}</h2>
-          ${s.note ? `<p class="menu-note">${esc(s.note)}</p>` : ''}
-          <ul class="menu-items">
+      current.sections.map((s, n) => {
+        const items = s.style === 'compact'
+          ? `<ul class="compact-items">${s.items.map((i) => `<li>${esc(i.name)}${i.price ? ` <span class="price">${esc(i.price)}</span>` : ''}</li>`).join('')}</ul>`
+          : `<ul class="menu-items">
             ${s.items.map((i) => `
               <li>
                 <div class="row"><span class="name">${esc(i.name)}</span>${i.price ? `<span class="price">${esc(i.price)}</span>` : ''}</div>
                 ${i.description ? `<div class="desc">${esc(i.description)}</div>` : ''}
               </li>`).join('')}
-          </ul>
-        </section>`).join('');
+          </ul>`;
+        const head = `<h2>${esc(s.title)}</h2>${s.note ? `<p class="menu-note">${esc(s.note)}</p>` : ''}`;
+        const cls = ['menu-section', s.style ? 'is-' + s.style : '', s.image ? 'has-image' : '', n % 2 ? 'flip' : ''].join(' ');
+        return `<section class="${cls}">
+          ${s.image ? `<img class="menu-photo" src="${esc(s.image)}" alt="${esc(s.imageAlt || '')}" loading="lazy">` : ''}
+          <div class="menu-body">${head}${items}</div>
+        </section>`;
+      }).join('');
     const pt = body.querySelector('.price-toggle');
     if (pt) {
       pt.addEventListener('click', () => {
