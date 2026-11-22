@@ -2,84 +2,90 @@
   "menus": [
     {
       "id": "christmas",
-      "name": "Holiday",
+      "name": "Holiday Menu",
       "show": true,
-      "intro": "Chef-crafted holiday catering for gatherings big and small. Orders accepted through New Year's. Portions, ingredients and vegetarian versions can be adjusted on request.",
+      "intro": [
+        "This season, we invite you to celebrate with ease.",
+        "Whether you're planning a festive gathering, heading to a holiday potluck, or suddenly need a Christmas dinner that tastes like you planned it for weeks, we've got you covered.",
+        "Epic Flavor brings chef-crafted comfort right to your table with our all-new customizable holiday catering menu, complete with spirited holiday appetizers and salads, decadent meals, delicious side dishes, and dreamy desserts.",
+        "Modifications (including portions and ingredients) can be made to any menu item, and vegetarian meals are available upon request."
+      ],
       "sections": [
         {
-          "title": "Appetizers and salads",
-          "note": "Each dish serves four.",
+          "title": "Holiday Apps + Salads",
+          "note": "Each dish serves four!",
           "items": [
             {
               "name": "Cajun seared ahi tuna",
-              "description": "Sweet Thai chili sauce, wasabi cream and orange ginger ponzu",
+              "description": "With sweet Thai chili sauce, wasabi cream, and orange ginger ponzu",
               "price": "$42.95"
             },
             {
-              "name": "Baked brie trilogy",
-              "description": "Caramelized apple in puff pastry; fresh herb and garlic; blackberry and spiced pecan wrapped in phyllo. Served with toasted baguette",
+              "name": "Merry baked brie trilogy",
+              "description": "Caramelized apple in puff pastry, fresh herb and garlic, and blackberry and spiced pecan wrapped in phyllo, served with a toasted baguette",
               "price": "$39.95"
             },
             {
               "name": "Roast chilled tenderloin",
-              "description": "Horseradish cream, garlic and red onion jam, blue cheese crumbles and rainbow pepper confit, with toasted baguette",
+              "description": "With horseradish cream, garlic and red onion jam, blue cheese crumbles, and rainbow pepper confit, served with a toasted baguette",
               "price": "$59.95"
             },
             {
               "name": "Grilled vegetable display",
-              "description": "Balsamic glaze, basil pesto and whipped feta with honey and thyme",
+              "description": "Served with balsamic glaze, basil pesto, and whipped feta with honey and thyme",
               "price": "$29.95"
             },
             {
-              "name": "Deck the greens",
-              "description": "Mixed greens with Honeycrisp apples, spiced pecans, goat cheese, tart cherries, black pepper and maple vinaigrette",
+              "name": "Deck the Greens",
+              "description": "A symphony of mixed greens featuring honeycrisp apples, spiced pecans, goat cheese, tart cherries, black pepper, and maple vinaigrette",
               "price": "$26.95"
             },
             {
-              "name": "Winter wedge salad",
-              "description": "Iceberg wedge with roasted root vegetables, cherrywood bacon, pomegranate arils, caramelized red onion, blue cheese and spiced ranch",
+              "name": "Winter Wedge Salad",
+              "description": "A mean iceberg wedge topped with roasted root vegetables, cherrywood bacon, pomegranate arils, caramelized red onion, blue cheese crumbles, and spiced ranch dressing",
               "price": "$26.95"
             }
           ]
         },
         {
-          "title": "Mains",
-          "note": "Each main comes with your choice of two sides.",
+          "title": "Merry Mains",
+          "note": "Comes with your choice of two sides!",
           "items": [
             {
               "name": "Beef tenderloin",
-              "description": "Bourbon and brown sugar glaze",
+              "description": "With a bourbon and brown sugar glaze",
               "price": "$42.95"
             },
             {
-              "name": "Apple and raisin stuffed pork loin",
-              "description": "Tart cherry glaze",
+              "name": "Apple and raisin filled roast pork loin",
+              "description": "With a tart cherry glaze",
               "price": "$28.95"
             },
             {
               "name": "Roasted herb turkey breast",
-              "description": "Orange cranberry compote",
+              "description": "Topped with an orange cranberry compote",
               "price": "$24.95"
             },
             {
               "name": "Pan-seared rockfish",
-              "description": "Celeriac and parsnip purée, sage brown butter",
+              "description": "Served with a celeriac and parsnip purée and sage brown butter",
               "price": "$38.95"
             },
             {
               "name": "Atlantic bronzed salmon",
-              "description": "Lemon and herb compound butter",
+              "description": "With a lemon and herb compound butter",
               "price": "$28.95"
             },
             {
               "name": "Two lump crab cakes",
-              "description": "Roasted red pepper aioli",
+              "description": "With roasted red pepper aioli",
               "price": "$45.92"
             }
           ]
         },
         {
-          "title": "Sides",
+          "title": "Holiday Sidekicks",
+          "style": "compact",
           "items": [
             {
               "name": "Charred asparagus with lemon zest"
@@ -96,31 +102,31 @@
             {
               "name": "Cornbread stuffing with tart cherries and chestnuts"
             }
-          ],
-          "style": "compact"
+          ]
         },
         {
-          "title": "Desserts",
+          "title": "Dessert Corner",
+          "style": "band",
           "items": [
             {
-              "name": "Cheesecake",
-              "description": "Key lime with Oreo crust; lemon blueberry with pistachio crust; espresso with espresso mousse and ladyfinger crust. Individual, 6 inch (serves 6 to 8) or 10 inch (serves 12 to 16)",
+              "name": "Cheesecake Challenge",
+              "description": "Name the flavor and size! Key lime with Oreo cookie crust, lemon blueberry with pistachio crust, or espresso with espresso mousse and ladyfinger crust. Individual, 6\" (serves 6 to 8), or 10\" (serves 12 to 16)",
               "price": "$12 / $30 / $60"
             },
             {
-              "name": "Mini dessert shooters",
-              "description": "Tiramisu; white, dark and milk chocolate mousse; triple layer panna cotta (white chocolate, mango and raspberry); chocolate peanut butter mousse",
-              "price": "$2 each"
+              "name": "Mini Dessert Shooters",
+              "description": "Tiramisu, white, dark and milk chocolate mousse, triple layer panna cotta (white chocolate, mango and raspberry), and chocolate peanut butter mousse",
+              "price": "$2.00 each"
             },
             {
-              "name": "Dessert bars",
-              "description": "Pecan pie, peppermint brownie, lemon white chocolate with cranberries, eggnog cheesecake. Serves four",
-              "price": "$12"
+              "name": "Belly up to the Bar",
+              "description": "Pecan pie, peppermint brownie, lemon white chocolate with cranberries, and eggnog cheesecake. Serves 4",
+              "price": "$12.00"
             }
-          ],
-          "style": "band"
+          ]
         }
-      ]
+      ],
+      "title": "Make your holiday gatherings pain‑free this year."
     },
     {
       "id": "thanksgiving",

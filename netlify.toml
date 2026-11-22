@@ -6,3 +6,8 @@
   for = "/content/*"
   [headers.values]
     Cache-Control = "no-cache"
+
+[[redirects]]
+  from = "/menus.html"
+  to = "/holiday.html"
+  status = 301

@@ -251,3 +251,149 @@ p { margin: 0 0 1em; }
 .site-footer .f-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
 .site-footer .f-brand img { width: 64px; height: auto; }
 .site-footer .f-brand span { font-family: var(--display); font-size: 1.6rem; color: var(--paper); }
+
+/* Holiday nav button with lights */
+.nav .nav-holiday {
+  position: relative; background: #8c1d22; color: #fff8ef; border: 0; border-radius: 3px;
+  padding: 9px 16px 9px; font-weight: 600; overflow: visible;
+}
+.nav .nav-holiday:hover, .nav .nav-holiday[aria-current="page"] { background: #741418; border-color: transparent; }
+.lights { position: absolute; left: 4px; right: 4px; top: -5px; height: 10px; display: flex; justify-content: space-between; pointer-events: none; }
+.lights::before { content: ""; position: absolute; left: 0; right: 0; top: 3px; height: 4px; border-top: 1px solid #2a3a2d; border-radius: 50%; }
+.lights i { position: relative; width: 6px; height: 9px; border-radius: 50% 50% 45% 45%; background: var(--c); box-shadow: 0 0 6px var(--c); }
+.lights i:nth-child(4n+1) { --c: #f2c14e; } .lights i:nth-child(4n+2) { --c: #e2463f; }
+.lights i:nth-child(4n+3) { --c: #5fbf6a; } .lights i:nth-child(4n+4) { --c: #6aa8ff; }
+@media (prefers-reduced-motion: no-preference) {
+  .lights i { animation: twinkle 2.4s ease-in-out infinite; }
+  .lights i:nth-child(2n) { animation-delay: 0.8s; } .lights i:nth-child(3n) { animation-delay: 1.6s; }
+  @keyframes twinkle { 50% { opacity: 0.45; box-shadow: none; } }
+}
+@media (max-width: 820px) { .nav .nav-holiday { text-align: center; margin-top: 14px; padding: 12px; border-bottom: 0; } .nav .nav-holiday + .nav-order { margin-top: 10px; } }
+
+/* Holiday page */
+.holiday-page { background: #f7f1e6; }
+.holiday-hero { background: #8c1d22; color: #fff8ef; padding: 0 0 clamp(48px, 7vw, 80px); overflow: hidden; }
+.holiday-hero .string { height: 34px; display: flex; justify-content: space-around; position: relative; margin-bottom: clamp(28px, 5vw, 56px); }
+.holiday-hero .string::before { content: ""; position: absolute; left: -2%; right: -2%; top: -12px; height: 30px; border-bottom: 2px solid #3b1416; border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+.holiday-hero .string i { width: 10px; height: 15px; margin-top: 14px; border-radius: 50% 50% 45% 45%; background: var(--c); box-shadow: 0 0 12px var(--c); }
+.holiday-hero .string i:nth-child(4n+1) { --c: #f2c14e; } .holiday-hero .string i:nth-child(4n+2) { --c: #ff6b5e; }
+.holiday-hero .string i:nth-child(4n+3) { --c: #7fd98a; } .holiday-hero .string i:nth-child(4n+4) { --c: #8fbcff; }
+.holiday-hero .string i:nth-child(odd) { margin-top: 18px; }
+@media (prefers-reduced-motion: no-preference) {
+  .holiday-hero .string i { animation: twinkle 2.6s ease-in-out infinite; }
+  .holiday-hero .string i:nth-child(3n) { animation-delay: 0.9s; } .holiday-hero .string i:nth-child(5n) { animation-delay: 1.7s; }
+}
+.holiday-hero h1, .holiday-title { font-size: clamp(2.4rem, 5vw, 4rem); max-width: 16ch; }
+.holiday-page .menu-intro { max-width: 62ch; color: #f3e3d3; font-family: var(--serif); font-size: 1.08rem; line-height: 1.75; margin: 24px 0 28px; }
+.holiday-page .menu-intro p:first-child { font-size: 1.3rem; color: #fff8ef; }
+.holiday-page .price-toggle { background: #fff8ef; color: #8c1d22; margin: 0; }
+.holiday-page .menu-section h2 { color: #8c1d22; font-family: var(--display); }
+.holiday-page .menu-note { color: #8c1d22; font-style: italic; }
+.holiday-page .menu-section.is-band { background: var(--forest); }
+.holiday-page .menu-items .price, .holiday-page .compact-items .price { color: #8c1d22; }
+.holiday-page .menu-section.is-band .price { color: #f2c14e; }
+.holiday-menu { padding-top: clamp(48px, 7vw, 88px); }
+.holiday-page .tabs:empty { display: none; }
+.holiday-page { display: flow-root; }
+.holiday-menu { padding-bottom: clamp(48px, 7vw, 88px); }
+.holiday-menu .menu-section:last-child { margin-bottom: 0; }
+.holiday-page .menu-section.is-band h2 { color: #fff8ef; }
+/* Snow + extra lights */
+.holiday-hero { position: relative; }
+.holiday-hero .wrap { position: relative; z-index: 1; }
+.snow { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.snow span { position: absolute; left: var(--x); top: -2rem; color: rgba(255, 255, 255, 0.75); font-size: var(--s); }
+@media (prefers-reduced-motion: no-preference) {
+  .snow span { animation: fall var(--d) linear var(--t) infinite; }
+  @keyframes fall { to { transform: translate(18px, 760px); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .snow span:nth-child(odd) { top: 30%; } .snow span:nth-child(3n) { top: 65%; } .snow span:nth-child(4n) { top: 85%; }
+}
+.divider-snow { display: flex; justify-content: center; gap: clamp(18px, 4vw, 44px); margin: 0 0 clamp(48px, 7vw, 80px); color: #b9cbe0; }
+.divider-snow span { font-size: 1.1rem; }
+.divider-snow span:nth-child(odd) { transform: translateY(10px); font-size: 0.8rem; }
+.divider-snow span:nth-child(3n) { transform: translateY(-6px); font-size: 1.4rem; }
+.divider-lights { position: relative; margin: 0 0 clamp(48px, 7vw, 80px); }
+.divider-lights .string { height: 34px; display: flex; justify-content: space-around; position: relative; }
+.divider-lights .string::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 30px; border-bottom: 2px solid #4a3b2c; border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+.divider-lights .string i { width: 10px; height: 15px; margin-top: 14px; border-radius: 50% 50% 45% 45%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+.divider-lights .string i:nth-child(odd) { margin-top: 18px; }
+.divider-lights .string i:nth-child(4n+1) { --c: #e0a82e; } .divider-lights .string i:nth-child(4n+2) { --c: #d8453c; }
+.divider-lights .string i:nth-child(4n+3) { --c: #3fa452; } .divider-lights .string i:nth-child(4n+4) { --c: #4f86d9; }
+@media (prefers-reduced-motion: no-preference) {
+  .divider-lights .string i { animation: twinkle 2.6s ease-in-out infinite; }
+  .divider-lights .string i:nth-child(3n) { animation-delay: 0.9s; } .divider-lights .string i:nth-child(5n) { animation-delay: 1.7s; }
+}
+.holiday-page .menu-section.is-band { position: relative; }
+.holiday-page .menu-section.is-band::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px;
+  background: repeating-linear-gradient(90deg, #d8453c 0 18px, #fff8ef 18px 36px); }
+
+/* Holiday: full-width hero, snow, more lights */
+.holiday-hero { position: relative; }
+.holiday-hero .wrap { position: relative; z-index: 1; }
+.holiday-hero h1.holiday-title { max-width: none; font-size: clamp(2.6rem, 5.6vw, 4.8rem); }
+.holiday-page .menu-intro { max-width: none; columns: 2 320px; column-gap: 56px; }
+.holiday-page .menu-intro p { break-inside: avoid; }
+.holiday-page .menu-intro p:first-child { column-span: all; }
+.holiday-hero .string-bottom { margin: clamp(32px, 5vw, 56px) 0 0; }
+.holiday-hero .string-bottom::before { top: -12px; }
+
+/* Light strings v2: bulbs sit on the wire */
+.light-string { position: relative; height: 46px; }
+.light-string svg { position: absolute; inset: 0 0 auto 0; width: 100%; height: 28px; overflow: visible; }
+.light-string path { fill: none; stroke: #2b2420; stroke-width: 2; }
+.light-string i {
+  position: absolute; width: 9px; height: 14px; margin-left: -4.5px; margin-top: 2px;
+  border-radius: 45% 45% 50% 50% / 40% 40% 60% 60%; background: var(--c); box-shadow: 0 0 10px var(--c);
+}
+.light-string i::before { content: ""; position: absolute; left: 2px; top: -4px; width: 5px; height: 5px; background: #2b2420; border-radius: 1px; }
+.light-string.is-hero { margin-bottom: clamp(20px, 4vw, 44px); }
+.light-string.is-hero path { stroke: #3b1416; }
+.light-string.is-divider { margin: 0 0 clamp(56px, 7vw, 88px); }
+@media (prefers-reduced-motion: no-preference) {
+  .light-string i { animation: twinkle 2.6s ease-in-out infinite; animation-delay: var(--dl); }
+}
+
+/* Holiday intro: one even column */
+.holiday-page .menu-intro { columns: auto; max-width: 68ch; }
+.holiday-page .menu-intro p { margin: 0 0 14px; }
+
+/* Festive order call to action */
+.holiday-cta { background: #f7f1e6; position: relative; overflow: hidden; }
+.holiday-cta h2 { color: #8c1d22; }
+.btn-candy {
+  position: relative; color: #8c1d22; background: #fff; font-size: 1.1rem; padding: 16px 34px;
+  border: 0; border-radius: 999px;
+  box-shadow: 0 0 0 6px #fff, 0 0 0 8px #e9d9c4;
+}
+.btn-candy::before {
+  content: ""; position: absolute; inset: -6px; border-radius: inherit; z-index: -1;
+  background: repeating-linear-gradient(-45deg, #c8282e 0 10px, #fff 10px 20px);
+}
+.btn-candy { isolation: isolate; box-shadow: 0 6px 18px rgba(140, 29, 34, 0.18); }
+.btn-candy:hover { background: #fff8ef; }
+.peppermint {
+  position: absolute; width: clamp(70px, 9vw, 120px); aspect-ratio: 1; border-radius: 50%;
+  background: repeating-conic-gradient(#c8282e 0 22.5deg, #fff 22.5deg 45deg);
+  box-shadow: inset 0 0 0 5px #fff, 0 8px 20px rgba(0,0,0,0.12); opacity: 0.95;
+}
+.peppermint::after { content: ""; position: absolute; inset: 38%; border-radius: 50%; background: #fff; }
+.peppermint.p1 { left: 8%; top: 22%; transform: rotate(12deg); }
+.peppermint.p2 { right: 9%; bottom: 18%; width: clamp(54px, 7vw, 90px); }
+@media (max-width: 820px) { .peppermint { display: none; } }
+.holiday-hero .wrap { text-align: center; }
+.holiday-hero h1.holiday-title { margin: 0 auto; }
+.holiday-page .menu-intro { margin-left: auto; margin-right: auto; max-width: 64ch; }
+.peppermint { background: repeating-conic-gradient(#c8282e 0 30deg, #fff 30deg 60deg); }
+.peppermint::after { inset: 30%; background: #fff; box-shadow: 0 0 0 2px #c8282e; }
+.btn-candy { border: 6px solid transparent; padding: 14px 32px;
+  background: linear-gradient(#fff, #fff) padding-box, repeating-linear-gradient(-45deg, #c8282e 0 9px, #fff 9px 18px) border-box; }
+.btn-candy:hover { background: linear-gradient(#fff8ef, #fff8ef) padding-box, repeating-linear-gradient(-45deg, #c8282e 0 9px, #fff 9px 18px) border-box; }
+.btn-candy::before { content: none; }
+.peppermint { background: repeating-conic-gradient(from 10deg, #c8282e 0 18deg, #fff 18deg 45deg); box-shadow: inset 0 0 0 4px #fff, 0 0 0 2px #e6d5c0, 0 8px 20px rgba(0,0,0,0.1); }
+.peppermint::after { inset: 44%; box-shadow: none; }
+.holiday-cta { padding-top: clamp(32px, 5vw, 56px); }
+.holiday-cta p { max-width: 46ch; margin-left: auto; margin-right: auto; }
+.peppermint.p1 { left: 10%; top: 30%; }
+.peppermint.p2 { right: 11%; bottom: 22%; }

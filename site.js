@@ -24,7 +24,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
   try {
     const site = await loadJSON('/content/site.json');
     if (site.showSeasonBanner && site.seasonBanner) {
-      banner.innerHTML = esc(site.seasonBanner) + ' <a href="/menus.html">See the menu</a>';
+      banner.innerHTML = esc(site.seasonBanner) + ' <a href="/holiday.html">See the holiday menu</a>';
       banner.hidden = false;
     }
   } catch (e) { /* banner stays hidden */ }
@@ -43,7 +43,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
   }
   const menus = data.menus.filter((m) => m.show && m.sections && m.sections.length);
   if (!menus.length) {
-    root.innerHTML = '<p>New menus are coming soon. Get in touch to plan your event.</p>';
+    root.innerHTML = '<p>There is no seasonal menu right now. Every event is cooked to order, so get in touch to plan yours.</p>';
     return;
   }
   const fromHash = location.hash.slice(1);
@@ -70,9 +70,26 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
     }
     const hasPrices = current.sections.some((s) => s.items.some((i) => i.price));
     body.className = '';
+    // A string of lights: bulbs hang from a curved wire. Positions are computed so every bulb sits on the wire.
+    const COLORS = ['#f2c14e', '#e2463f', '#4fb562', '#5f97ef'];
+    const lightString = (count, cls) => {
+      const sag = 22, top = 4;
+      let bulbs = '';
+      for (let k = 0; k < count; k++) {
+        const x = (k + 0.5) / count;
+        const y = top + sag * 4 * x * (1 - x);
+        bulbs += `<i style="left:${(x * 100).toFixed(2)}%;top:${y.toFixed(1)}px;--c:${COLORS[k % 4]};--dl:${((k * 0.7) % 2.6).toFixed(1)}s"></i>`;
+      }
+      return `<div class="light-string ${cls || ''}" aria-hidden="true"><svg viewBox="0 0 100 ${sag + top + 2}" preserveAspectRatio="none"><path d="M0 ${top} Q50 ${top + sag * 2} 100 ${top}" vector-effect="non-scaling-stroke"/></svg>${bulbs}</div>`;
+    };
+    const flakes = (n) => Array.from({ length: n }, (_, k) => `<span style="--x:${(k * 37) % 100}%;--d:${6 + (k % 5) * 1.3}s;--s:${0.6 + (k % 4) * 0.25}rem;--t:${(k % 7) * -1.1}s">❄</span>`).join('');
+    const snow = `<div class="snow" aria-hidden="true">${flakes(26)}</div>`;
     body.innerHTML =
-      (current.intro ? `<p class="menu-intro">${esc(current.intro)}</p>` : '') +
-      (hasPrices ? '<button type="button" class="btn btn-dark price-toggle" aria-pressed="false">View pricing</button>' : '') +
+      `<section class="holiday-hero">${lightString(22, 'is-hero')}${snow}<div class="wrap">` +
+      (current.title ? `<h1 class="holiday-title">${esc(current.title)}</h1>` : `<h1>${esc(current.name)}</h1>`) +
+      (current.intro ? `<div class="menu-intro">${[].concat(current.intro).map((t) => `<p>${esc(t)}</p>`).join('')}</div>` : '') +
+      (hasPrices ? '<button type="button" class="btn price-toggle" aria-pressed="false">View pricing</button>' : '') +
+      `</div></section><div class="wrap holiday-menu">` +
       current.sections.map((s, n) => {
         const items = s.style === 'compact'
           ? `<ul class="compact-items">${s.items.map((i) => `<li>${esc(i.name)}${i.price ? ` <span class="price">${esc(i.price)}</span>` : ''}</li>`).join('')}</ul>`
@@ -85,11 +102,11 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
           </ul>`;
         const head = `<h2>${esc(s.title)}</h2>${s.note ? `<p class="menu-note">${esc(s.note)}</p>` : ''}`;
         const cls = ['menu-section', s.style ? 'is-' + s.style : '', s.image ? 'has-image' : '', n % 2 ? 'flip' : ''].join(' ');
-        return `<section class="${cls}">
+        return (n === 1 || n === 2 ? lightString(16, 'is-divider') : '') + `<section class="${cls}">
           ${s.image ? `<img class="menu-photo" src="${esc(s.image)}" alt="${esc(s.imageAlt || '')}" loading="lazy">` : ''}
           <div class="menu-body">${head}${items}</div>
         </section>`;
-      }).join('');
+      }).join('') + '</div>';
     const pt = body.querySelector('.price-toggle');
     if (pt) {
       pt.addEventListener('click', () => {
@@ -102,4 +119,10 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
   root.innerHTML = '';
   root.append(tabs, body);
   render();
+})();
+
+// Preselect "Holiday order" when arriving from the holiday page
+(() => {
+  const sel = document.getElementById('f-type');
+  if (sel && new URLSearchParams(location.search).get('type') === 'holiday') sel.value = 'Holiday order';
 })();
