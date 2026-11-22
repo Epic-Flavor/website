@@ -24,7 +24,8 @@ This is the website for Epic Flavor, Chef William Slade's catering business in H
 
 - Prices stay hidden until a visitor clicks "View pricing". Never show prices by default.
 - Never remove or rename the order form fields in `order.html`, or the `data-netlify` attribute. That is how inquiries reach the chef's email.
-- Keep the existing colors (forest green, linen, walnut) and fonts (Libre Caslon, Albert Sans).
+- Keep the existing colors (forest green, warm cream, walnut) and fonts (Fraunces for headings, Albert Sans for body, Caveat for the one handwritten note on the home page). Fonts are hosted in `fonts/`, not loaded from Google.
+- Keep the homey feel: photos have white snapshot borders and rounded corners. Do not make the site look slick or corporate.
 - Do not invent reviews, awards, prices or facts about the chef.
 - No em dashes in site text.
 - After editing JSON, run `node scripts/check-content.mjs` and fix anything it reports. Netlify runs the same check before publishing, and a failing check blocks the update.
